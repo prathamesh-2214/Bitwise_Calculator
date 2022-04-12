@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
       title: 'BitWise Calculator',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My BITWISE Calculator'),
+          
+
+          title: const Text('Bitwise Calculator'),
+         
         ),
         body: Calculator(),
       ),
@@ -27,7 +30,7 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  String answer = 'Your Ans is  : ';
+  String answer = 'Result  : ';
   var firstnum = TextEditingController();
   var secondnum = TextEditingController();
   Widget build(BuildContext context) {
@@ -47,8 +50,13 @@ class _CalculatorState extends State<Calculator> {
               controller: secondnum,
               decoration: InputDecoration(
                   labelText: 'Second Number', hintText: 'Enter a number '),
+
             ),
-            SizedBox(height: 20),
+            const SizedBox(
+              height: 20,
+              width: 30,
+
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -60,7 +68,11 @@ class _CalculatorState extends State<Calculator> {
                       "AND",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20, width: 25),
+
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
                 ElevatedButton(
                     onPressed: () {
                       calculation("OR");
@@ -69,7 +81,12 @@ class _CalculatorState extends State<Calculator> {
                       "OR",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20, width: 25),
+
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
+
                 ElevatedButton(
                     onPressed: () {
                       calculation("XOR");
@@ -78,7 +95,12 @@ class _CalculatorState extends State<Calculator> {
                       "XOR",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20, width: 25),
+
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
+
                 ElevatedButton(
                     onPressed: () {
                       calculation("Shift Right");
@@ -87,7 +109,8 @@ class _CalculatorState extends State<Calculator> {
                       "Shift Right",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20, width: 25),
+
+                SizedBox(height: 20, width: 30),
                 ElevatedButton(
                     onPressed: () {
                       calculation("Shift Left");
@@ -96,7 +119,12 @@ class _CalculatorState extends State<Calculator> {
                       "Shift Left",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20, width: 25),
+
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
+
               ],
             ),
             Container(
