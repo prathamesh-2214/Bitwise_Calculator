@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Calculator',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My CALCULATOR'),
+          title: const Text('Bitwise Calculator'),
         ),
         body: Calculator(),
       ),
@@ -27,7 +27,7 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  String answer = 'Your Ans is  : ';
+  String answer = 'Result  : ';
   var firstnum = TextEditingController();
   var secondnum = TextEditingController();
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _CalculatorState extends State<Calculator> {
             TextFormField(
               controller: firstnum,
               decoration: InputDecoration(
-                  labelText: 'First Num', hintText: 'Enter a number '),
+                  labelText: 'First Number', hintText: 'Enter a number '),
             ),
             SizedBox(
               height: 20,
@@ -46,9 +46,12 @@ class _CalculatorState extends State<Calculator> {
             TextFormField(
               controller: secondnum,
               decoration: InputDecoration(
-                  labelText: 'First Num', hintText: 'Enter a number '),
+                  labelText: 'Second Number', hintText: 'Enter a number '),
             ),
-            SizedBox(height: 20),
+            const SizedBox(
+              height: 20,
+              width: 30,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -60,7 +63,10 @@ class _CalculatorState extends State<Calculator> {
                       "+",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
                 ElevatedButton(
                     onPressed: () {
                       calculation("-");
@@ -69,7 +75,10 @@ class _CalculatorState extends State<Calculator> {
                       "-",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
                 ElevatedButton(
                     onPressed: () {
                       calculation("*");
@@ -78,7 +87,10 @@ class _CalculatorState extends State<Calculator> {
                       "*",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
                 ElevatedButton(
                     onPressed: () {
                       calculation("/");
@@ -87,7 +99,10 @@ class _CalculatorState extends State<Calculator> {
                       "/",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(
+                  height: 20,
+                  width: 30,
+                ),
               ],
             ),
             Container(
