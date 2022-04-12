@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calculator',
+      title: 'BitWise Calculator',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('My CALCULATOR'),
+          title: const Text('My BITWISE Calculator'),
         ),
         body: Calculator(),
       ),
@@ -38,7 +38,7 @@ class _CalculatorState extends State<Calculator> {
             TextFormField(
               controller: firstnum,
               decoration: InputDecoration(
-                  labelText: 'First Num', hintText: 'Enter a number '),
+                  labelText: 'First Number', hintText: 'Enter a number '),
             ),
             SizedBox(
               height: 20,
@@ -46,7 +46,7 @@ class _CalculatorState extends State<Calculator> {
             TextFormField(
               controller: secondnum,
               decoration: InputDecoration(
-                  labelText: 'First Num', hintText: 'Enter a number '),
+                  labelText: 'Second Number', hintText: 'Enter a number '),
             ),
             SizedBox(height: 20),
             Row(
@@ -54,37 +54,46 @@ class _CalculatorState extends State<Calculator> {
               children: [
                 ElevatedButton(
                     onPressed: () {
-                      calculation("+");
+                      calculation("AND");
                     },
                     child: Text(
-                      "+",
+                      "AND",
                       style: TextStyle(fontSize: 30),
                     )),
                 SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
-                      calculation("-");
+                      calculation("OR");
                     },
                     child: Text(
-                      "-",
+                      "OR",
                       style: TextStyle(fontSize: 30),
                     )),
                 SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
-                      calculation("*");
+                      calculation("XOR");
                     },
                     child: Text(
-                      "*",
+                      "XOR",
                       style: TextStyle(fontSize: 30),
                     )),
                 SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
-                      calculation("/");
+                      calculation("Shift Right");
                     },
                     child: Text(
-                      "/",
+                      "Shift Right",
+                      style: TextStyle(fontSize: 30),
+                    )),
+                SizedBox(height: 20),
+                ElevatedButton(
+                    onPressed: () {
+                      calculation("Shift Left");
+                    },
+                    child: Text(
+                      "Shift Left",
                       style: TextStyle(fontSize: 30),
                     )),
                 SizedBox(height: 20),
@@ -105,26 +114,32 @@ class _CalculatorState extends State<Calculator> {
     int valueOne = int.parse(firstnum.text.toString());
     int valuetwo = int.parse(secondnum.text.toString());
     switch (value) {
-      case "+":
-        int value = valueOne + valuetwo;
+      case "AND":
+        int value = valueOne & valuetwo;
         setState(() {
           answer = "Your Ans is : " + value.toString();
         });
         break;
-      case "-":
-        int value = valueOne - valuetwo;
+      case "OR":
+        int value = valueOne | valuetwo;
         setState(() {
           answer = "Your Ans is : " + value.toString();
         });
         break;
-      case "*":
-        int value = valueOne * valuetwo;
+      case "XOR":
+        int value = valueOne ^ valuetwo;
         setState(() {
           answer = "Your Ans is : " + value.toString();
         });
         break;
-      case "/":
-        double value = valueOne / valuetwo;
+      case "Shift Right":
+        var value = valueOne >> valuetwo;
+        setState(() {
+          answer = "Your Ans is : " + value.toString();
+        });
+        break;
+      case "Shift Left":
+        var value = valueOne << valuetwo;
         setState(() {
           answer = "Your Ans is : " + value.toString();
         });
