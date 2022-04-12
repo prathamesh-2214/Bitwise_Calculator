@@ -60,7 +60,7 @@ class _CalculatorState extends State<Calculator> {
                       "AND",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(height: 20, width: 25),
                 ElevatedButton(
                     onPressed: () {
                       calculation("OR");
@@ -69,7 +69,7 @@ class _CalculatorState extends State<Calculator> {
                       "OR",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(height: 20, width: 25),
                 ElevatedButton(
                     onPressed: () {
                       calculation("XOR");
@@ -78,7 +78,7 @@ class _CalculatorState extends State<Calculator> {
                       "XOR",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(height: 20, width: 25),
                 ElevatedButton(
                     onPressed: () {
                       calculation("Shift Right");
@@ -87,7 +87,7 @@ class _CalculatorState extends State<Calculator> {
                       "Shift Right",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(height: 20, width: 25),
                 ElevatedButton(
                     onPressed: () {
                       calculation("Shift Left");
@@ -96,7 +96,7 @@ class _CalculatorState extends State<Calculator> {
                       "Shift Left",
                       style: TextStyle(fontSize: 30),
                     )),
-                SizedBox(height: 20),
+                SizedBox(height: 20, width: 25),
               ],
             ),
             Container(
