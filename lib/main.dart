@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'BitWise Calculator',
       home: Scaffold(
         appBar: AppBar(
-          
-
           title: const Text('Bitwise Calculator'),
-         
         ),
         body: Calculator(),
       ),
@@ -50,12 +47,10 @@ class _CalculatorState extends State<Calculator> {
               controller: secondnum,
               decoration: InputDecoration(
                   labelText: 'Second Number', hintText: 'Enter a number '),
-
             ),
             const SizedBox(
               height: 20,
               width: 30,
-
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -66,9 +61,8 @@ class _CalculatorState extends State<Calculator> {
                     },
                     child: Text(
                       "AND",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 18),
                     )),
-
                 SizedBox(
                   height: 20,
                   width: 30,
@@ -79,37 +73,32 @@ class _CalculatorState extends State<Calculator> {
                     },
                     child: Text(
                       "OR",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 18),
                     )),
-
                 SizedBox(
                   height: 20,
                   width: 30,
                 ),
-
                 ElevatedButton(
                     onPressed: () {
                       calculation("XOR");
                     },
                     child: Text(
                       "XOR",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 18),
                     )),
-
                 SizedBox(
                   height: 20,
                   width: 30,
                 ),
-
                 ElevatedButton(
                     onPressed: () {
                       calculation("Shift Right");
                     },
                     child: Text(
                       "Shift Right",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 18),
                     )),
-
                 SizedBox(height: 20, width: 30),
                 ElevatedButton(
                     onPressed: () {
@@ -117,22 +106,43 @@ class _CalculatorState extends State<Calculator> {
                     },
                     child: Text(
                       "Shift Left",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 18),
                     )),
-
                 SizedBox(
                   height: 20,
                   width: 30,
                 ),
-
               ],
             ),
             Container(
               margin: EdgeInsets.only(top: 30),
               child: Text(
                 answer,
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(fontSize: 18),
               ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                "Dart Bitwise Operators \n",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  "Bitwise operator are used to perform bit level operation over its operand. \n",
+                  style: TextStyle(fontSize: 18),
+                )),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              alignment: Alignment.bottomLeft,
+              child: Image.asset("assets/img.png"),
             )
           ],
         ));
@@ -145,31 +155,31 @@ class _CalculatorState extends State<Calculator> {
       case "AND":
         int value = valueOne & valuetwo;
         setState(() {
-          answer = "Your Ans is : " + value.toString();
+          answer = "Result : " + value.toString();
         });
         break;
       case "OR":
         int value = valueOne | valuetwo;
         setState(() {
-          answer = "Your Ans is : " + value.toString();
+          answer = "Result : " + value.toString();
         });
         break;
       case "XOR":
         int value = valueOne ^ valuetwo;
         setState(() {
-          answer = "Your Ans is : " + value.toString();
+          answer = "Result : " + value.toString();
         });
         break;
       case "Shift Right":
         var value = valueOne >> valuetwo;
         setState(() {
-          answer = "Your Ans is : " + value.toString();
+          answer = "Result :  " + value.toString();
         });
         break;
       case "Shift Left":
         var value = valueOne << valuetwo;
         setState(() {
-          answer = "Your Ans is : " + value.toString();
+          answer = "Result : " + value.toString();
         });
         break;
     }
